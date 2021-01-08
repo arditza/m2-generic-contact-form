@@ -1,0 +1,56 @@
+Back,Back
+"Delete Contact","Delete Contact"
+"Are you sure you want to delete this contact ?","Are you sure you want to delete this contact ?"
+"This contact no longer exists.","This contact no longer exists."
+"The contact has been deleted.","The contact has been deleted."
+"We can't find a contact to delete.","We can't find a contact to delete."
+"Contact Us","Contact Us"
+"Contact Managment","Contact Managment"
+"A total of %1 element(s) have been deleted.","A total of %1 element(s) have been deleted."
+"You are not allowed to access this page.","You are not allowed to access this page."
+"This contact form does no longer exists.","This contact form does no longer exists."
+"View Contact","View Contact"
+"Contact View of : '%1'","Contact View of : '%1'"
+"An error occurred while processing your form. Please try again later.","An error occurred while processing your form. Please try again later."
+"Form submitted successfully!","Form submitted successfully!"
+"Enter the Name and try again.","Enter the Name and try again."
+"Enter the Surname and try again.","Enter the Surname and try again."
+"The email address is invalid. Verify the email address and try again.","The email address is invalid. Verify the email address and try again."
+"Enter the Comment and try again.","Enter the Comment and try again."
+"Refresh the page and try again.","Refresh the page and try again."
+"Authorization for data processing must be checked","Authorization for data processing must be checked"
+View,View
+"* Required Fields","* Required Fields"
+"Request information","Request information"
+Name,Name
+"Last name","Last name"
+"Company name","Company name"
+City,City
+Province,Province
+Phone,Phone
+Email,Email
+"Product name","Product name"
+Comment,Comment
+"Privacy text","Privacy text"
+"Authorization for data processing","Authorization for data processing"
+Submit,Submit
+Customers,Customers
+Azra,Azra
+"Generic Form","Generic Form"
+"General Configuration","General Configuration"
+"Generic Form Privacy Text","Generic Form Privacy Text"
+"Contact Form Configuration","Contact Form Configuration"
+"Email Sender","Email Sender"
+"Email Recipient","Email Recipient"
+"Porduct Form Configuration","Porduct Form Configuration"
+"Sample Form","Sample Form"
+"Contact Information","Contact Information"
+Delete,Delete
+"Delete items","Delete items"
+"Are you sure you want to delete selected items?","Are you sure you want to delete selected items?"
+ID,ID
+Surname,Surname
+"Referer Url","Referer Url"
+"Customer Ip","Customer Ip"
+"Created Time","Created Time"
+"Request Information","Request Information"

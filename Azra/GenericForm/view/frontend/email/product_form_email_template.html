@@ -1,0 +1,54 @@
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<!--@subject {{trans "Request information"}} @-->
+<!--@vars {
+"var form_comment":"Message",
+"var form_surname":"Sender Surname",
+"var form_name":"Sender Name",
+"var form_telephone":"Sender Phone"
+} @-->
+
+{{template config_path="design/email/header_template"}}
+
+<table class="message-details">
+    <tr>
+        <td><strong>{{trans "Name"}}: </strong></td>
+        <td>{{var form_name}}</td>
+    </tr>
+    <tr>
+        <td><strong>{{trans "Last name"}}: </strong></td>
+        <td>{{var form_surname}}</td>
+    </tr>
+    <tr>
+        <td><strong>{{trans "Company name"}}: </strong></td>
+        <td>{{var form_denomination}}</td>
+    </tr>
+    <tr>
+        <td><strong>{{trans "City"}}: </strong></td>
+        <td>{{var form_city}}</td>
+    </tr>
+    <tr>
+        <td><strong>{{trans "Province"}}: </strong></td>
+        <td>{{var form_province}}</td>
+    </tr>
+    <tr>
+        <td><strong>{{trans "Phone"}}: </strong></td>
+        <td>{{var form_telephone}}</td>
+    </tr>
+    <tr>
+        <td><strong>{{trans "Email"}}: </strong></td>
+        <td>{{var form_email}}</td>
+    </tr>
+    <tr>
+        <td><strong>{{trans "Product name"}}: </strong></td>
+        <td>{{var form_product}}</td>
+    </tr>
+</table>
+<p><strong>{{trans "Comment"}}: </strong></p>
+<p>{{var form_comment}}</p>
+
+{{template config_path="design/email/footer_template"}}

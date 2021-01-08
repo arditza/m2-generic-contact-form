@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright Â© 2018 Porto. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="2columns-left" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="product.info.details">
+            <block class="Azra\GenericForm\Block\ContactForm" name="requestform.tab" template="Azra_GenericForm::forms/product.phtml" group="detailed_info">
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">Request information about this product</argument>
+                    <argument name="sort_order" xsi:type="string">40</argument>
+                    <argument name="recaptcha_for" xsi:type="string">product</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

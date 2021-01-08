@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="azra" translate="label" sortOrder="30">
+            <label>Azra</label>
+        </tab>
+        <section id="genericform" translate="label" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Generic Form</label>
+            <tab>azra</tab>
+            <resource>Azra_Product::genereic_form_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Configuration</label>
+                <field id="forms_privacy_text" translate="label" type="textarea" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Generic Form Privacy Text</label>
+                    <comment>Privacy Text that will be displayed on generic forms.</comment>
+                </field>
+            </group>
+            <group id="contact" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Contact Form Configuration</label>
+                <!-- enabled -->
+                <!-- Bcc -->
+                <!-- enable recaptcha -->
+                <field id="enable_captcha" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Captcha</label>
+                    <config_path>recaptcha_frontend/type_for/custom_contact</config_path>
+                    <source_model>Magento\ReCaptchaAdminUi\Model\OptionSource\Type</source_model>
+                </field>
+                <field id="enable_attachments" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Atachments</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable single file upload on contact form</comment>
+                </field>
+                <field id="sender_email_identity" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Email Sender</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Identity</source_model>
+                </field>
+                <!-- Email recepient -->
+                <field id="email_recipient" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Email Recipient</label>
+                    <validate>validate-email</validate>
+                    <comment>Enter the correct email which will recieve the contact form data</comment>
+                </field>
+            </group>
+            <group id="product" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Porduct Form Configuration</label>
+                <!-- enable recaptcha -->
+                <field id="enable_captcha" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Captcha</label>
+                    <config_path>recaptcha_frontend/type_for/product</config_path>
+                    <source_model>Magento\ReCaptchaAdminUi\Model\OptionSource\Type</source_model>
+                </field>
+                <field id="email_recipient" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Email Recipient</label>
+                    <validate>validate-email</validate>
+                    <comment>Enter the correct email which will recieve the products form data</comment>
+                </field>
+                <field id="sender_email_identity" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Email Sender</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Identity</source_model>
+                </field>
+            </group>
+            <group id="rolex" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Rolex Form Configuration</label>
+                <!-- enable recaptcha -->
+                <field id="enable_captcha" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Captcha</label>
+                    <config_path>recaptcha_frontend/type_for/rolex</config_path>
+                    <source_model>Magento\ReCaptchaAdminUi\Model\OptionSource\Type</source_model>
+                </field>
+                <field id="email_recipient" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Email Recipient</label>
+                    <validate>validate-email</validate>
+                    <comment>Enter the correct email which will recieve the products form data</comment>
+                </field>
+                <field id="sender_email_identity" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Email Sender</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Identity</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

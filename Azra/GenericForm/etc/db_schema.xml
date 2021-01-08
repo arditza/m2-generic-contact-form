@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table comment="Azra Genericform Contact Table" engine="innodb" name="genericform_contact" resource="default">
+		<column comment="Entity Id" identity="true" name="entity_id" nullable="false" padding="11" unsigned="true" xsi:type="int"/>
+		<column comment="Store Id" name="store_id" nullable="false" default="0" unsigned="true" xsi:type="smallint"/>
+		<column comment="Customer Name" name="name" nullable="false" length="150" xsi:type="varchar"/>
+		<column comment="Customer Surname" name="surname" nullable="false" length="150" xsi:type="varchar"/>
+		<column comment="Customer Email" name="email" nullable="false" length="150" xsi:type="varchar"/>
+		<column comment="Contact Comment" name="comment" nullable="false" xsi:type="text"/>
+		<column comment="Referer Url" name="referer_url" nullable="false" length="150" xsi:type="varchar"/>
+		<column comment="Customer Ip" name="customer_ip" nullable="false" length="45" xsi:type="varchar"/>
+		<column comment="Other Information" name="other_info" nullable="false" xsi:type="text"/>
+		<column comment="Creation Time" name="created_at" nullable="false" default="CURRENT_TIMESTAMP" xsi:type="timestamp"/>
+		<!-- <column comment="Update Time" name="updated_time" nullable="false" default="CURRENT_TIMESTAMP" xsi:type="timestamp"/> -->
+		<constraint referenceId="PRIMARY" xsi:type="primary">
+			<column name="entity_id"/>
+		</constraint>
+		<constraint xsi:type="foreign" referenceId="AZRA_GENERIC_FORM_STORE_ID_REFERENCE" table="genericform_contact" column="store_id" referenceTable="store" referenceColumn="store_id" onDelete="NO ACTION"/>
+		<index referenceId="CONTACT_FORM_CUSTOMER_NAME_INDEX" indexType="btree">
+			<column name="name"/>
+		</index>
+		<index referenceId="CONTACT_FORM_CUSTOMER_SURNAME_INDEX" indexType="btree">
+			<column name="surname"/>
+		</index>
+		<index referenceId="CONTACT_FORM_CUSTOMER_EMAIL_INDEX" indexType="btree">
+			<column name="email"/>
+		</index>
+		<index referenceId="CONTACT_FORM_REFERER_URL_INDEX" indexType="btree">
+			<column name="referer_url"/>
+		</index>
+		<index referenceId="CONTACT_FORM_CUSTOMER_IP_INDEX" indexType="btree">
+			<column name="customer_ip"/>
+		</index>
+		<index referenceId="CONTACT_FORM_CREATED_AT_INDEX" indexType="btree">
+			<column name="created_at"/>
+		</index>
+	</table>
+</schema>

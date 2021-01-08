@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+  <menu>
+        <add id="Azra_GenericForm::genericform" title="Contact Managment" module="Azra_GenericForm" sortOrder="55" parent="Magento_Customer::customer" action="genericform/index/index" resource="Azra_GenericForm::genericform"/>
+    </menu>
+</config>

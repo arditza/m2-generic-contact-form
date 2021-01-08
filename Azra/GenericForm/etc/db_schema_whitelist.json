@@ -1,0 +1,26 @@
+{
+    "genericform_contact": {
+        "column": {
+            "entity_id": true,
+            "store_id": true,
+            "name": true,
+            "surname": true,
+            "email": true,
+            "message": true,
+            "referer_url": true,
+            "customer_ip": true,
+            "other_info": true,
+            "created_time": true,
+            "updated_time": true
+        },
+        "index": {
+            "GENERICFORM_CONTACT_NAME": true,
+            "GENERICFORM_CONTACT_SURNAME": true,
+            "GENERICFORM_CONTACT_EMAIL": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "GENERICFORM_CONTACT_STORE_ID_STORE_STORE_ID": true
+        }
+    }
+}

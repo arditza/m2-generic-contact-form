@@ -1,0 +1,88 @@
+<?php
+
+/** @var \Magento\GenericForm\Block\ContactForm $block */
+
+$helper = $this->helper('Azra\GenericForm\Helper\Data');
+?>
+<form class="form contact"
+      action="<?= $block->escapeUrl($block->getFormAction()) ?>"
+      id="request-form"
+      method="post"
+      data-hasrequired="<?= $block->escapeHtmlAttr(__('* Required Fields')); ?>"
+      data-mage-init='{"validation":{}}'>
+    <fieldset class="fieldset">
+        <legend class="legend"><span><?php echo $block->escapeHtml(__('Fill out the form for information, advice or assistance')); ?></span></legend><br />
+        <div class="fieldset ">
+            <div class="fields row">
+                <div class="field name required col-6">
+                    <label class="label" for="form_name"><span><?php echo $block->escapeHtml(__('Name and lastname')); ?></span></label>
+                    <div class="control">
+                        <input name="form_name" id="form_name" title="<?php echo $block->escapeHtml(__('Name and lastname')); ?>" value="<?php echo $block->escapeHtml($helper->getUserName()) ?>" class="input-text" type="text" data-validate="{required:true}" placeholder="<?php echo $block->escapeHtml(__("Name and lastname *")); ?>"/>
+                    </div>
+                </div>
+                <div class="field email required col-6">
+                    <label class="label" for="form_email"><span><?php echo $block->escapeHtml(__('Email address')); ?></span></label>
+                    <div class="control">
+                        <input name="form_email" id="form_email" title="<?php echo $block->escapeHtml(__('Email address')); ?>" value="<?php echo $block->escapeHtml($helper->getUserEmail()) ?>" class="input-text" type="email" data-validate="{required:true, 'validate-email':true}" placeholder="<?php echo $block->escapeHtml(__("Email address *")); ?>"/>
+                    </div>
+                </div>
+                <div class="field product_name required col-6">
+                    <label class="label" for="form_product_name"><span><?php echo $block->escapeHtml(__('Product Name')); ?></span></label>
+                    <div class="control">
+                        <input name="form_product_name" id="form_product_name" title="<?php echo $block->escapeHtml(__('Product Name')); ?>" value="<?php echo $block->escapeHtml($helper->getCurrentProduct()->getName()) ?>" class="input-text" type="text" data-validate="{required:true}" placeholder="<?php echo $block->escapeHtml(__("Product Name *")); ?>" readonly disabled="disabled"/>
+                    </div>
+                </div>
+                <div class="field sku required col-6">
+                    <label class="label" for="sku"><span><?php echo $block->escapeHtml(__('Sku')); ?></span></label>
+                    <div class="control">
+                        <input name="sku" id="sku" title="<?php echo $block->escapeHtml(__('Sku')); ?>" value="<?php echo $block->escapeHtml($helper->getCurrentProduct()->getSku()) ?>" class="input-text" type="text" data-validate="{required:true}" placeholder="<?php echo $block->escapeHtml(__("Sku *")); ?>" readonly disabled="disabled"/>
+                    </div>
+                </div>
+                <div class="field comment required col-12">
+                <label class="label" for="form_comment"><span><?php echo $block->escapeHtml(__('Comment')); ?></span></label>
+                    <div class="control">
+                        <textarea name="form_comment" id="form_comment" title="<?php echo $block->escapeHtml(__('Comment')); ?>" class="input-text" cols="5" rows="4" data-validate="{required:true}" placeholder="<?php echo $block->escapeHtml(__("Comment *")); ?>"></textarea>
+                    </div>
+                </div>
+                <div class="field choice accept-privacy required col-12">
+                    <input name="form_accept_privacy" id="form_accept_privacy" title="<?php echo __('Authorization for data processing') ?>" class="checkbox" type="checkbox" data-validate="{required:true}"/>
+                    <label class="label" for="form_accept_privacy"><span><?php echo __('Authorization for data processing') ?></span></label>
+                </div>
+                <?php if ($helper->isRecaptchaEnabledForProductForm()): ?>
+                    <div class="field recaptcha">
+                        <?php echo $block->getChildHtml("recaptcha"); ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <input type="hidden" name="hideit" id="hideit" value="" />
+            <?php if ($helper->getCurrentProduct()): ?>
+                <input type="hidden" name="product_sku" id="hideit" value="<?php echo $block->escapeHtml($helper->getCurrentProduct()->getSku()); ?>" />
+            <?php endif ?>
+            <button type="submit" title="<?php echo __('Submit Request') ?>" class="action submit primary">
+                <span><?php echo __('Submit Request') ?></span>
+            </button>
+        </div>
+    </div>
+</form>
+
+<script>
+    require(["jquery","mage/mage"], function($)
+    {
+        //error placement for radio button
+        var dataForm = $('#request-form');
+        dataForm.mage('validation', {
+            errorPlacement: function(error, element) {
+                if (element.hasClass('checkbox')) {
+                    error.appendTo('.field.choice');
+                } else {
+                    element.after(error);
+                }
+            }
+        });
+
+    });
+</script>
