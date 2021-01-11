@@ -2,9 +2,9 @@
 
 This module can be used for multiple contact forms. By default it inserts a contact form on product page tabs and it can be used as a replacement for magentos native contact form.
 
-##Installation
+## Installation
 ```
-composer require azra/genericform --dev
+composer require azra/genericform
 ```
 
 ## Usage 
