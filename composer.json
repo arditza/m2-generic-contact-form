@@ -1,29 +1,19 @@
 {
-    "name": "azra/genericform",
-    "description": "Generic contact form module, serves the purpose ",
+    "name": "azra/module-generic-form",
+    "description": "Generic Contact form used for multiple purposes",
+    "require": {
+        "php": "^7.2.0"
+    },
     "type": "magento2-module",
     "version": "1.0.0",
-    "license": "proprietary",
-    "authors": [
-    {
-        "name": "Ardit Zavalina",
-        "email": "arditzavalina@yahoo.com",
-        "role": "Magento Fullstack Developer"
-    }],
-    "minimum-stability": "dev",
-    "keywords": [
-        "magento 2",
-        "magento 2 genericform",
-        "magento contact form",
-        "azra"
+    "license": [
+        "Commercial"
     ],
-    "autoload":
-    {
+    "autoload": {
         "files": [
             "registration.php"
         ],
-        "psr-4":
-        {
+        "psr-4": {
             "Azra\\GenericForm\\": ""
         }
     }
